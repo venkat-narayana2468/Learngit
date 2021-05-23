@@ -1,0 +1,150 @@
+#include <stdio.h>
+
+int main()
+{
+    int a[10][10],b[10][10],c[10][10],n,m,i,j,p,q;
+    printf("enter the size of 1st matrix\n");
+    scanf("%d %d",&n,&m);
+    printf("enter the elements in the 1st matrix\n");
+    for(i=0;i<n;i++)
+    {
+        for(j=0;j<m;j++)
+        {
+            scanf("%d",&a[i][j]);
+        }
+    }
+    printf("enter the size of the 2nd matrix\n");
+    scanf("%d %d",&p,&q);
+    printf("enter the elements in 2nd matrix\n");
+    for(i=0;i<p;i++)
+    {
+        for(j=0;j<q;j++)
+        {
+            scanf("%d",&b[i][j]);
+        }
+    }
+    //multiplication of matrices
+    if(n==p && m==q)
+    {
+        for(i=0;i<n;i++)
+        {
+            for(j=0;j<m;j++)
+            {
+                c[i][j]=a[i][j]*b[i][j];
+            }
+        }
+    }
+    else
+    {
+        printf("addition is not possible\n");
+    }
+    //display
+    for(i=0;i<n;i++)
+    {
+        for(j=0;j<m;j++)
+        {
+            printf("%d\t",c[i][j]);
+        }
+        printf("\n");
+    }
+}
+///////////////////////////////////////////////////////////////////////////////////
+
+#include<stdio.h>
+#include<math.h>
+int powXY(int x,int y);
+int main()
+{
+    int x,y,ans;
+    printf("enter the number to find power\n");
+    scanf("%d",&x);
+    printf("enter the number upto the highest degree\n");
+    scanf("%d",&y);
+    ans=powXY(x,y);
+    printf("%d",ans);
+}
+int powXY(int x,int y)
+{
+    int i,product;
+    product=1;
+    for(i=0;i<y;i++)
+    {
+        product=product*x;
+    }
+    return (product);
+}
+/////////////////////////////////////////////////////////////////////////////////////////
+
+//without arguments with return value
+#include<stdio.h>
+#include<math.h>
+
+int powXY(void);
+int main()
+{
+    int ans;
+    ans=powXY();
+    printf("%d",ans);
+}
+int powXY(void)
+{
+    int i,x,y,product;
+    printf("enter the number to find power\n");
+    scanf("%d",&x);
+    printf("enter the highest power to raise\n");
+    scanf("%d",&y);
+    product=1;
+    for(i=0;i<y;i++)
+    {
+        product=product*x;
+    }
+    return (product);
+}
+///////////////////////////////////////////////////////////////////////////////////
+//with arguments without return value
+#include<stdio.h>
+#include<math.h>
+
+void powXY(int x,int y);
+int main()
+{
+    int x,y,ans;
+    printf("enter the number\n");
+    scanf("%d",&x);
+    printf("enter the power\n");
+    scanf("%d",&y);
+    powXY(x,y);
+}
+void powXY(int x,int y)
+{
+    int i,pro;
+    pro=1;
+    for(i=0;i<y;i++)
+    {
+        pro=pro*x;
+    }
+    printf("%d",pro);
+}
+//////////////////////////////////////////////
+#include<stdio.h>
+
+void powXY(void);
+int main()
+{
+    int x,y;
+    powXY();
+}
+void powXY()
+{
+    int i,x,y,pro;
+    printf("enter the number\n");
+    scanf("%d",&x);
+    printf("enter the highest power\n");
+    scanf("%d",&y);
+    pro=1;
+    for(i=0;i<y;i++)
+    {
+        pro=pro*x;
+    }
+    printf("%d",pro);
+}
